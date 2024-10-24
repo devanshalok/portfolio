@@ -138,6 +138,12 @@ nav .logo img {
     z-index: 1;
 }
 
+.hero-content span{
+    position: relative;
+    color: #007bff;
+    z-index: 1;
+}
+
 .hero-content h1 {
     font-size: 5rem;
     margin-bottom: 40px;
@@ -171,7 +177,7 @@ nav .logo img {
 
 #about h2 {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     font-size: 2.5rem;
     position: relative;
 }
@@ -196,8 +202,8 @@ nav .logo img {
 }
 
 .about-content img {
-    width: 200px;
-    border-radius: 10px;
+    width: 400px;
+    border-radius: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -277,6 +283,108 @@ nav .logo img {
     }
 }
 
+/* Experience Section */
+#experience {
+    width: 60%;
+    /* Takes 50% of the screen width */
+    margin: 0 auto;
+    /* Centers the section */
+    padding: 100px 0;
+    /* Add some padding */
+    background-color: #0d0d0d;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center items horizontally */
+}
+
+#experience h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* Experience Item */
+.experience-item {
+    width: 100%;
+    /* Full width of the 50% container */
+    margin-bottom: 20px;
+    background-color: #181818;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.experience-header {
+    background-color: #6610f2;
+    color: #fff;
+    padding: 15px 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.experience-header i {
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.year-range {
+    font-weight: 600;
+    margin-left: auto;
+    /* Ensure the date range is always right-aligned */
+    text-align: right;
+}
+
+.experience-details {
+    display: none;
+    padding: 20px;
+    background-color: #292b2c;
+    font-size: 1rem;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Expanded state for accordion */
+.experience-item.active .experience-details {
+    display: block;
+    height: auto;
+    /* Automatically adjust height for content */
+}
+
+.experience-item.active .experience-header i {
+    transform: rotate(45deg);
+    /* Rotate icon to indicate it's open */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #experience {
+        width: 90%;
+        /* Increase width to 90% on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #experience {
+        width: 100%;
+        /* Full width on the smallest screens */
+        padding: 50px 20px;
+        /* Adjust padding for small screens */
+    }
+
+    .experience-header {
+        padding: 15px;
+        /* Reduce padding to fit smaller screens */
+    }
+}
 /* Projects Section */
 #projects {
     padding: 100px 0;
@@ -406,31 +514,130 @@ form button:hover {
     background: #0056b3;
 }
 
-.social-links {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.social-links a {
-    color: #333;
-    margin: 0 10px;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #007bff;
-}
-
-/* Footer Styles */
-footer {
-    background: #333;
+/* Footer Section */
+#contact-footer {
+    background-color: #0d0d0d;
     color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ensures vertical alignment */
 }
 
-/* Smooth Scroll Offset */
-html {
-    scroll-padding-top: 80px;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    align-items: center;
+    /* Align left and right content vertically */
+}
+
+/* Typewriter font for email and social links */
+.contact-info {
+    flex: 1;
+    padding-right: 40px;
+    /* Typewriter-style font */
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin-bottom: 180px;
+}
+
+.email-link {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    /* Add space between email and social links */
+    text-decoration: underline;
+    color: #b00fff;
+   
+    /* Typewriter-style font */
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    /* Typewriter-style font */
+}
+
+.social-links li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Right Section: Testimonials */
+.testimonials {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.testimonial-item {
+    background-color: #6610f2;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    /* Ensure uniform height */
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: right;
+    /* Align testimonial authors to the right */
+}
+
+.testimonial-item::before {
+    content: "“";
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: -20px;
+    left: -20px;
+}
+
+/* Ensure vertical alignment of left and right sides */
+.footer-content {
+    align-items: flex-start;
+    /* Align top of both columns */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-info,
+    .testimonials {
+        padding: 0;
+        width: 100%;
+        /* Full width for small screens */
+    }
+
+    .contact-info {
+        margin-bottom: 30px;
+    }
 }
