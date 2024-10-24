@@ -1,5 +1,3 @@
-// script.js
-
 // Initialize AOS
 AOS.init({
   duration: 1000,
@@ -40,17 +38,48 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
 });
 
-// Mobile Menu Toggle
+// Get the hamburger menu, nav links, and document body
 const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+const navLinks = document.getElementById('nav-links');
+const menuIcon = menuToggle.querySelector('i'); // Select the icon inside the hamburger
 
-menuToggle.addEventListener('click', () => {
+// Function to close the mobile menu
+function closeMenu() {
+  navLinks.classList.remove('active');
+  menuIcon.classList.remove('fa-times'); // Remove the close icon
+  menuIcon.classList.add('fa-bars'); // Add the hamburger icon
+}
+
+// Function to toggle the mobile menu
+menuToggle.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevent triggering the document click listener
+
+  // Toggle the active class
   navLinks.classList.toggle('active');
   
-  // Toggle the menu icon
+  // Toggle between the hamburger and close (X) icons
   if (navLinks.classList.contains('active')) {
-    menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+    menuIcon.classList.remove('fa-bars');
+    menuIcon.classList.add('fa-times');
   } else {
-    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    closeMenu(); // Reset the menu if not active
   }
+});
+
+// Add click event listener to close the menu when clicking outside of it
+document.addEventListener('click', (event) => {
+  const isClickInsideNav = navLinks.contains(event.target);
+  const isClickOnToggle = menuToggle.contains(event.target);
+
+  // If the click is outside the navigation and the menu is active, close the menu
+  if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
+    closeMenu(); // Close the menu
+  }
+});
+
+// Ensure menu closes on link click in the mobile menu
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    closeMenu(); // Close the menu after clicking any link
+  });
 });

@@ -13,9 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrQkTyNQ0Q6bIqmJRFqJu1XgjkFfi8FSKYxYDLb6VtVX0LlCQa5ecwfA2uLBoFbK7CQjqxX+KJHeF3w5kQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -28,17 +26,17 @@
     <header>
         <nav>
             <a href="#hero" class="logo">
-                <img src="images/devansh.png" alt="Logo"> <!-- Replace with your logo -->
+                <img src="images/logo.png" alt="Logo"> <!-- Replace with your logo -->
             </a>
-            <ul class="nav-links">
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#about" data-aos="fade-down" data-aos-delay="100">About</a></li>
                 <li><a href="#skills" data-aos="fade-down" data-aos-delay="200">Skills</a></li>
                 <li><a href="#projects" data-aos="fade-down" data-aos-delay="300">Projects</a></li>
                 <li><a href="#contact" data-aos="fade-down" data-aos-delay="400">Contact</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
         </nav>
     </header>
 
@@ -48,7 +46,6 @@
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1>Hello, I'm <span>Devansh Alok</span></h1>
             <p>Full Stack Software Engineer & AI Enthusiast</p>
-            <a href="#projects" class="btn" data-aos="zoom-in" data-aos-delay="500">View My Work</a>
         </div>
     </section>
 
@@ -72,38 +69,38 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container" data-aos="fade-left">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                </div>
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                </div>
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
-                    <i class="fas fa-database"></i>
-                    <h3>Databases</h3>
-                </div>
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
-                    <i class="fas fa-cloud"></i>
-                    <h3>Cloud Services</h3>
-                </div>
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
-                    <i class="fas fa-robot"></i>
-                    <h3>Machine Learning</h3>
-                </div>
-            </div>
+<!-- My Expertise Section -->
+<section id="expertise">
+    <h2>My Expertise</h2>
+    <div class="expertise-grid">
+
+        <!-- Software Development -->
+        <div class="expertise-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-laptop-code"></i>
+            <h3><span class="highlight">Software Development</span></h3>
+            <p>Experienced in full-stack development using technologies like <strong>JavaScript, Python, C++, and
+                    Java</strong>. Proficient in both OOP and functional programming paradigms.</p>
         </div>
-    </section>
+
+        <!-- Frontend Development -->
+        <div class="expertise-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-code"></i>
+            <h3><span class="highlight">Frontend Development</span></h3>
+            <p>Expert in crafting intuitive user interfaces with modern web technologies like <strong>React, Next.js,
+                    HTML, CSS</strong>. Passionate about creating seamless user experiences.</p>
+        </div>
+
+        <!-- AI & Machine Learning -->
+        <div class="expertise-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-robot"></i>
+            <h3><span class="highlight">AI & Machine Learning</span></h3>
+            <p>Proficient in building AI/ML solutions using frameworks like <strong>PyTorch, TensorFlow, and
+                    Scikit-Learn</strong>. Experience in deep learning, data analysis, and predictive modeling.</p>
+        </div>
+
+    </div>
+</section>
+
 
     <!-- Projects Section -->
     <section id="projects">

@@ -1,7 +1,4 @@
-/* styles.css */
-
 /* Reset and Global Styles */
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -14,12 +11,18 @@ body {
     background-color: #0d0d0d;
 }
 
-/* Navbar Styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigation Styling */
 header {
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    padding: 20px 50px;
     background: transparent;
 }
 
@@ -27,18 +30,15 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 100px;
 }
 
 nav .logo img {
-    max-width: 100px;
-    border-radius: 10px;
+    max-width: 120px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: space-between;
     gap: 50px;
 }
 
@@ -47,10 +47,9 @@ nav .logo img {
 }
 
 .nav-links a {
-    text-decoration: none;
-    font-size: 1rem;
     color: #fff;
-    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
@@ -58,119 +57,63 @@ nav .logo img {
     color: #00d9ff;
 }
 
-/* Hero Section */
-#hero {
-    height: 100vh;
-    background: url('images/your-background.gif') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
+/* Hamburger Menu Icon */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
     color: #fff;
 }
 
-.hero-content {
-    z-index: 1;
-}
-
-.hero-content h1 {
-    font-size: 5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.hero-content p {
-    font-size: 1.5rem;
-    margin-top: 10px;
-}
-
-#hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    /* Slight overlay for text readability */
-    z-index: 0;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-    nav {
-        padding: 20px 50px;
-    }
-
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    .nav-links {
-        gap: 20px;
-    }
-}
-
-/* Responsive for Mobile */
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
-}
-/* Mobile Menu Toggle */
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
+/* Mobile Menu */
 @media (max-width: 768px) {
     .nav-links {
         position: absolute;
-        top: 70px;
-        right: 0;
-        background: #fff;
+        top: 0;
+        left: 0;
+        height: 50vw;
+        width:100vw;
+        background-color: rgba(13, 13, 13, 0.95);
         flex-direction: column;
-        width: 200px;
-        display: none;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links li {
-        margin: 15px 0;
-        text-align: center;
-    }
-
-    .menu-toggle {
-        display: block;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
     .nav-links.active {
-        display: flex;
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
     }
+
+    .nav-links li {
+        margin: 10px;
+    }
+
+   .menu-toggle {
+       display: block;
+       position: absolute;
+       top: 20px;
+       /* Adjust this as needed to center it */
+       right: 20px;
+       /* Adjust this as needed to center it */
+       z-index: 1001;
+       /* Ensure it's above the navbar */
+   }
 }
 
 /* Adjust padding for smoother layout */
 #hero {
     padding-top: 120px;
-    /* Add space to ensure hero content doesn't overlap with navbar */
 }
 
-/* Hero Section with HD GIF Background */
+/* Hero Section */
 #hero {
     height: 100vh;
-    background: url('images/your-hd-background.gif') center/cover no-repeat;
-    /* Replace with your GIF */
+    background: url('images/mountain.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,27 +129,22 @@ nav .logo img {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    /* Adds a dark overlay to make text readable */
+    /* Dark overlay */
 }
 
 .hero-content {
     position: relative;
     color: #fff;
-    /* White text for better contrast against the background */
     z-index: 1;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero-content h1 span {
-    color: #007bff;
+    font-size: 5rem;
+    margin-bottom: 40px;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin-bottom: 30px;
 }
 
@@ -272,59 +210,71 @@ nav .logo img {
     font-size: 1.1rem;
 }
 
-/* Skills Section */
-#skills {
-    padding: 100px 0;
-}
-
-#skills h2 {
+/* Expertise Section */
+#expertise {
+    padding: 100px 20px;
+    background-color: #0d0d0d;
+    color: #fff;
     text-align: center;
-    margin-bottom: 50px;
+}
+
+#expertise h2 {
     font-size: 2.5rem;
-    position: relative;
+    margin-bottom: 50px;
 }
 
-#skills h2::after {
-    content: '';
-    width: 100px;
-    height: 4px;
-    background: #007bff;
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    transform: translateX(-50%);
-}
-
-.skills-grid {
+.expertise-grid {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
-.skill-card {
-    background: #fff;
-    padding: 30px;
+.expertise-card {
+    background: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 150px;
+    width: 300px;
     transition: transform 0.3s ease;
 }
 
-.skill-card:hover {
+.expertise-card:hover {
     transform: translateY(-10px);
 }
 
-.skill-card i {
-    font-size: 2rem;
-    color: #007bff;
-    margin-bottom: 15px;
+.expertise-card i {
+    font-size: 2.5rem;
+    color: #00d9ff;
+    margin-bottom: 20px;
 }
 
-.skill-card h3 {
-    font-size: 1.1rem;
-    color: #333;
+.expertise-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.expertise-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.highlight {
+    color: #ff007b;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .expertise-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .expertise-card {
+        width: 100%;
+        max-width: 350px;
+    }
 }
 
 /* Projects Section */
