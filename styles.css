@@ -8,7 +8,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: #fff;
-    background-color: #0d0d0d;
+    background-color: #000000;
 }
 
 a {
@@ -219,29 +219,29 @@ nav .logo img {
 /* Expertise Section */
 #expertise {
     padding: 100px 20px;
-    background-color: #0d0d0d;
+    background-color: #000000;
     color: #fff;
     text-align: center;
 }
 
 #expertise h2 {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
+    font-size: 5rem;
+    margin-bottom: 70px;
 }
 
 .expertise-grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 0px;
     flex-wrap: wrap;
 }
 
 .expertise-card {
     background: #181818;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px;
+    border: 1px solid whitesmoke;
+    padding: 50px 40px ;
     border-radius: 10px;
-    width: 300px;
+    width: 350px;
     transition: transform 0.3s ease;
 }
 
@@ -266,8 +266,9 @@ nav .logo img {
 }
 
 .highlight {
-    color: #ff007b;
-    text-decoration: underline;
+    color: #ffffff;
+    text-decoration: underline rgb(255, 109, 133) ;
+    text-decoration-thickness: 4px;
 }
 
 /* Responsive */
@@ -285,84 +286,114 @@ nav .logo img {
 
 /* Experience Section */
 #experience {
-    width: 60%;
-    /* Takes 50% of the screen width */
-    margin: 0 auto;
-    /* Centers the section */
-    padding: 100px 0;
-    /* Add some padding */
-    background-color: #0d0d0d;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Center items horizontally */
+  padding: 100px 0px;
+  margin:auto;
+  width: 70%;
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
 }
 
 #experience h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
 }
 
-/* Experience Item */
 .experience-item {
-    width: 100%;
-    /* Full width of the 50% container */
-    margin-bottom: 20px;
-    background-color: #181818;
-    border-radius: 10px;
-    overflow: hidden;
+  margin-bottom: 20px;
+  background-color: #000000;
+  border-radius: 10px;
+  overflow: hidden;
+  translate: (-50%,-50%);
 }
 
 .experience-header {
-    background-color: #6610f2;
-    color: #fff;
-    padding: 15px 20px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
+  background-color: #6610f2;
+  font-size: large;
+  color: #fff;
+  padding: 15px 20px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 .experience-header i {
-    font-size: 1.2rem;
-    margin-left: 10px;
+  font-size: 1.2rem;
+  margin-left: 10px;
 }
 
 .year-range {
-    font-weight: 600;
-    margin-left: auto;
-    /* Ensure the date range is always right-aligned */
-    text-align: right;
+  font-weight: 600;
+  margin-left: auto; /* Ensures the date range is right-aligned */
+  text-align: right;
 }
 
 .experience-details {
-    display: none;
-    padding: 20px;
-    background-color: #292b2c;
-    font-size: 1rem;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
+  display: none;
+  padding: 20px;
+  background-color: #000000;
+  font-size: 1rem;
 }
 
-/* Expanded state for accordion */
+/* Flex layout for inner content */
+.experience-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.experience-logo img {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  border-radius: 20%;
+  object-fit: cover;
+}
+
+.experience-description {
+  flex: 1;
+  text-align: left;
+}
+
+.experience-description p {
+  margin: 10px 0;
+}
+
+.experience-description a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Technology Badges */
+.technologies {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tech-badge {
+  background-color: #6610f2;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 .experience-item.active .experience-details {
-    display: block;
-    height: auto;
-    /* Automatically adjust height for content */
+  display: block;
+  transition: all 0.5s ease;
 }
 
 .experience-item.active .experience-header i {
-    transform: rotate(45deg);
-    /* Rotate icon to indicate it's open */
+  transform: rotate(45deg); /* Rotate icon to indicate it's open */
 }
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -388,7 +419,7 @@ nav .logo img {
 /* Projects Section */
 #projects {
     padding: 100px 0;
-    background: #3b3232;
+    background: #000000;
 }
 
 #projects h2 {

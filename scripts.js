@@ -84,7 +84,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-// GSAP for accordion animation
+// GSAP for Accordion Animation
 const experienceHeaders = document.querySelectorAll('.experience-header');
 
 experienceHeaders.forEach(header => {
@@ -96,15 +96,7 @@ experienceHeaders.forEach(header => {
     document.querySelectorAll('.experience-item').forEach(item => {
       if (item !== parent && item.classList.contains('active')) {
         item.classList.remove('active');
-        gsap.to(item.querySelector('.experience-details'), { 
-          height: 0, 
-          opacity: 0, 
-          duration: 0.5 
-        });
-        gsap.to(item.querySelector('.experience-header i'), { 
-          rotation: 0, 
-          duration: 0.5 
-        });
+        gsap.to(item.querySelector('.experience-details'), { height: 0, opacity: 0, duration: 0.5 });
       }
     });
 
@@ -112,14 +104,13 @@ experienceHeaders.forEach(header => {
     if (parent.classList.contains('active')) {
       parent.classList.remove('active');
       gsap.to(details, { height: 0, opacity: 0, duration: 0.5 });
-      gsap.to(this.querySelector('i'), { rotation: 0, duration: 0.5 });
     } else {
       parent.classList.add('active');
       gsap.to(details, { height: "auto", opacity: 1, duration: 0.5 });
-      gsap.to(this.querySelector('i'), { rotation: 45, duration: 0.5 });
     }
   });
 });
+
 
 // GSAP Animation for Footer Content
 gsap.from(".contact-info", { 
