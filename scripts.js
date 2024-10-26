@@ -66,6 +66,21 @@ menuToggle.addEventListener('click', (e) => {
   }
 });
 
+// JavaScript to toggle translucent class on scroll
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('header');
+  const heroSection = document.querySelector('#hero');
+
+  // Check if we have scrolled past the hero section
+  const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+
+  if (window.scrollY > heroBottom) {
+    navbar.classList.add('translucent');
+  } else {
+    navbar.classList.remove('translucent');
+  }
+});
+
 // Add click event listener to close the menu when clicking outside of it
 document.addEventListener('click', (event) => {
   const isClickInsideNav = navLinks.contains(event.target);

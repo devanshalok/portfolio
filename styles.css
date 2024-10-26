@@ -17,6 +17,7 @@ a {
 }
 
 /* Navigation Styling */
+
 header {
     position: fixed;
     width: 100%;
@@ -24,6 +25,17 @@ header {
     z-index: 1000;
     padding: 20px 50px;
     background: transparent;
+    /* Default background for initial load */
+    transition: background 0.3s ease;
+    /* Smooth transition */
+}
+
+/* Translucent Navbar */
+header.translucent {
+    background: rgba(0, 0, 0, 0.7);
+    /* Translucent background */
+    backdrop-filter: blur(10px);
+    /* Optional: adds a blur effect for a glassy look */
 }
 
 nav {
@@ -89,14 +101,10 @@ nav .logo img {
         transform: translateY(0);
     }
 
-    .nav-links li {
-        margin: 10px;
-    }
-
    .menu-toggle {
        display: block;
        position: absolute;
-       top: 20px;
+       top: 55px;
        /* Adjust this as needed to center it */
        right: 20px;
        /* Adjust this as needed to center it */
@@ -151,7 +159,7 @@ nav .logo img {
 
 .hero-content p {
     font-size: 2rem;
-    margin-bottom: 30px;
+    margin-bottom: 150px;
 }
 
 .btn {
@@ -167,6 +175,57 @@ nav .logo img {
 
 .btn:hover {
     background: #0056b3;
+}
+
+/* Scroll Indicator Styling */
+.scroll-indicator {
+    position: absolute;
+    bottom: 100px;
+    /* Adjust based on your layout */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mouse {
+    width: 35px;
+    height: 55px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.scroll {
+    width: 4px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    top: 10px;
+    animation: scrollAnimation 1.5s infinite;
+}
+
+/* Animation for the scroll effect */
+@keyframes scrollAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* About Section */
@@ -239,8 +298,8 @@ nav .logo img {
 .expertise-card {
     background: #181818;
     border: 1px solid whitesmoke;
-    padding: 50px 40px ;
-    border-radius: 10px;
+    padding: 60px 30px ;
+    border-radius: 0px;
     width: 350px;
     transition: transform 0.3s ease;
 }
@@ -254,10 +313,18 @@ nav .logo img {
     color: #00d9ff;
     margin-bottom: 20px;
 }
+.icon-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Space between icon and heading */
+    margin-bottom: 15px;
+}
 
 .expertise-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .expertise-card p {
@@ -266,9 +333,27 @@ nav .logo img {
 }
 
 .highlight {
-    color: #ffffff;
-    text-decoration: underline rgb(255, 109, 133) ;
-    text-decoration-thickness: 4px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Different Colors for First Line of Each Heading */
+.pink {
+    text-decoration: underline;
+    text-decoration-color: #ff007b;
+    text-decoration-thickness: 5px;
+}
+
+.blue {
+    text-decoration: underline;
+    text-decoration-color: #007bff;
+    text-decoration-thickness: 5px;
+}
+
+.orange {
+    text-decoration: underline;
+    text-decoration-color: #ff7f00; 
+    text-decoration-thickness: 5px;
 }
 
 /* Responsive */
@@ -483,7 +568,8 @@ nav .logo img {
 }
 
 .project-info .btn {
-    background: #28a745;
+    margin: 50px;
+    background:#8744f2 ;
 }
 
 .project-info .btn:hover {
