@@ -159,7 +159,7 @@ nav .logo img {
 
 .hero-content p {
     font-size: 2rem;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 }
 
 .btn {
@@ -227,7 +227,78 @@ nav .logo img {
         transform: translateY(0);
     }
 }
+/* Container for Socials Popup */
+.socials-popup-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
 
+/* Trigger Text Styling */
+.socials-trigger {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #6610f2;
+    cursor: pointer;
+    transition: color 2.0s ease;
+}
+
+.socials-trigger:hover {
+    color: #520bbf;
+}
+
+/* Popup Styling */
+.socials-popup {
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #555;
+    color: #fff;
+    margin-top: 10px;
+    /* padding: 10px; */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 130px;
+    z-index: 10;
+}
+
+.socials-popup a {
+    display: block;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.socials-popup a:hover {
+    color: #e8f2f4;
+}
+
+/* Arrow styling for the popup */
+.popup-arrow {
+    position: absolute;
+    top: -25px;
+    /* Position above the popup box */
+    left: 2%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #555;
+    /* Match the popup background color */
+    content: "";
+    /* Required to make pseudo-elements work properly */
+}
+
+/* Toggle popup visibility on click */
+.socials-popup-container.active .socials-popup {
+    display: block;
+}
 /* About Section */
 #about {
     padding: 100px 0;
@@ -335,6 +406,29 @@ nav .logo img {
 .highlight {
     display: inline-block;
     font-weight: bold;
+}
+/* Button Styling */
+.button-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.experience-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #6610f2;
+    /* Match the Professional Experience section color */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.experience-button:hover {
+    background-color: #520bbf;
+    /* Darken color on hover */
 }
 
 /* Different Colors for First Line of Each Heading */
@@ -688,6 +782,7 @@ form button:hover {
 }
 
 .social-links li {
+    
     margin-bottom: 10px;
     font-size: 1.2rem;
 }
@@ -757,4 +852,11 @@ form button:hover {
     .contact-info {
         margin-bottom: 30px;
     }
+}
+
+.visitor-counter {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 1rem;
+    text-align: left;
 }

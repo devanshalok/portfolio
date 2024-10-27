@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Devansh Alok Portfolio</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
 
     <!-- AOS CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
@@ -36,7 +37,7 @@
                 <li><a href="#expertise" data-aos="fade-down" data-aos-delay="200">Skills</a></li>
                 <li><a href="#projects" data-aos="fade-down" data-aos-delay="300">Projects</a></li>
                 <li><a href="#contact-footer" data-aos="fade-down" data-aos-delay="400">Contact</a></li>
-                <li><a href="http://tiny.cc/305szz" target="_blank" data-aos="fade-down" data-aos-delay="500">Resume</a></li>
+                <!-- <li><a href="http://tiny.cc/305szz" target="_blank" data-aos="fade-down" data-aos-delay="500">Resume</a></li> -->
             </ul>
         </nav>
     </header>
@@ -47,14 +48,24 @@
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1>Hello, I'm <span>Devansh Alok</span></h1>
             <p>Full Stack Software Engineer & AI Enthusiast</p>
+        <!-- Socials Popup Trigger and Popup Content -->
+        <div class="socials-popup-container">
+            <span class="socials-trigger">View My Socials</span>
+            <div class="socials-popup">
+                <span class="popup-arrow"></span>
+                <a href="https://www.linkedin.com/in/devanshalok" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                <a href="https://github.com/devanshalok" target="_blank"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                <a href="https://twitter.com/geekscripter" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</a>
+            </div>
+        </div>
+
         </div>
         <div class="scroll-indicator">
             <div class="mouse">
                 <div class="scroll"></div>
             </div>
-
     </section>
-
+    
 
 <!-- Expertise Section -->
 <section id="expertise">
@@ -62,7 +73,7 @@
     <div class="expertise-grid">
 
         <!-- Expertise 1 -->
-        <div class="expertise-card">
+        <div class="expertise-card" data-aos="fade-down" data-aos-delay="100">
             <div class="icon-heading">
                 <i class="expertise-icon fas fa-laptop-code"></i>
                 <h3><span class=" pink">Software</span> <br>Development</h3>
@@ -72,7 +83,7 @@
         </div>
 
         <!-- Expertise 2 -->
-        <div class="expertise-card">
+        <div class="expertise-card" data-aos="fade-down" data-aos-delay="200">
             <div class="icon-heading">
                 <i class="expertise-icon fab fa-react"></i>
                 <h3><span class=" blue">Frontend Dev</span> <br> React, NextJS</h3>
@@ -82,7 +93,7 @@
         </div>
 
         <!-- Expertise 3 -->
-        <div class="expertise-card">
+        <div class="expertise-card" data-aos="fade-down" data-aos-delay="300">
             <div class="icon-heading">
                 <i class="expertise-icon fas fa-robot"></i>
                 <h3><span class="orange">Machine Learning</span></h3>
@@ -90,10 +101,16 @@
             <p>Proficient in building AI/ML solutions using frameworks like <strong>PyTorch, TensorFlow, and
                     Scikit-Learn</strong>. Experienced in deep learning, data analysis, and predictive modeling.</p>
         </div>
+        
 
         <!-- Add more expertise cards as needed -->
     </div>
+    <div class="button-container" data-aos="fade-up" data-aos-delay="100">
+        <a href="http://tiny.cc/305szz" target="_blank" class="experience-button">More about me</a>
+    </div>
 </section>
+
+
 
 <!-- Professional Experience Section -->
 <section id="experience" data-aos="fade-up">
@@ -302,20 +319,25 @@
                 <h2>Connect with me on my socials!</h2>
                 <p>Shoot an email or just say hi on my instant message &#128075;
                 </p>
-                <a href="mailto:devansh@example.com" class="email-link">devansh@example.com</a>
+                <a href="mailto:devansh@example.com" class="email-link">devansh@gmail.com</a>
                 <ul class="social-links">
                 <a href="https://www.linkedin.com/in/devanshalok" target="_blank">
-                    <li> LinkedIn</li>
+                    <li><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</li>
                 </a>
                 <a href="https://www.twitter.com/geekscripter" target="_blank">
-                    <li> X (Twitter)</li>
+                 <li><i class="fab fa-twitter" aria-hidden="true"></i> X (Twitter)</li>
                 </a>
                 <a href="https://github.com/devanshalok" target="_blank">
-                    <li > Github</li>
+                    <li ><i class="fab fa-github" aria-hidden="true"></i> Github</li>
                 </a>
                 <a href="https://www.instagram.com/devanshalok" target="_blank">
-                    <li > Instagram</li>
+                 <li ><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</li>
                 </a>
+            <div class="visitor-counter">
+                <span>Visitor Counter:</span> <span id="visitor-count">Loading...</span>
+            </div>
+
+
                 </ul>
             </div>
     

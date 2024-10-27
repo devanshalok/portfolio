@@ -140,3 +140,36 @@ gsap.from(".testimonials .testimonial-item", {
   duration: 0.8, 
   stagger: 0.3 // Stagger animations for each testimonial
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const trigger = document.querySelector('.socials-trigger');
+  const popupContainer = document.querySelector('.socials-popup-container');
+  
+  // Toggle popup on trigger click
+  trigger.addEventListener('click', (event) => {
+    event.stopPropagation();
+    popupContainer.classList.toggle('active');
+  });
+
+  // Close popup when clicking outside
+  document.addEventListener('click', () => {
+    popupContainer.classList.remove('active');
+  });
+
+  // Prevent popup close when clicking inside
+  popupContainer.querySelector('.socials-popup').addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+});
+
+
+// Fetch and display the visitor count from CountAPI
+fetch('https://api.countapi.xyz/hit/devanshalok.wiki/visitor')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('visitor-count').innerText = data.value;
+  })
+  .catch(error => {
+    console.error('Error fetching visitor count:', error);
+    document.getElementById('visitor-count').innerText = "Error";
+  });
