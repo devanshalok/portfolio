@@ -242,6 +242,7 @@ nav .logo img {
 
     .scroll-indicator {
         bottom: 15px;
+        margin-top: 10px;
         /* Adjust positioning if needed to avoid overlap */
         z-index: 900;
         /* Ensure it stays below the socials popup */
