@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Fetch and display the visitor count from CountAPI
-fetch('https://api.countapi.xyz/hit/devanshalok.wiki/visitor')
+fetch('https://api.countapi.xyz/hit/devanshalok.wiki/index')
   .then(response => response.json())
   .then(data => {
     document.getElementById('visitor-count').innerText = data.value;

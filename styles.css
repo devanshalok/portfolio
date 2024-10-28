@@ -83,8 +83,9 @@ nav .logo img {
         position: absolute;
         top: 0;
         left: 0;
-        height: 50vw;
-        width:100vw;
+        height: 50vh;
+        /* Full viewport height for visibility */
+        width: 100vw;
         background-color: rgba(13, 13, 13, 0.95);
         flex-direction: column;
         justify-content: center;
@@ -101,16 +102,34 @@ nav .logo img {
         transform: translateY(0);
     }
 
-   .menu-toggle {
-       display: block;
-       position: absolute;
-       top: 55px;
-       /* Adjust this as needed to center it */
-       right: 20px;
-       /* Adjust this as needed to center it */
-       z-index: 1001;
-       /* Ensure it's above the navbar */
-   }
+    .nav-links li {
+        margin: 1px 0;
+        /* Reduced gap between menu items */
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 8px 0;
+        /* Reduced padding for better fit */
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #00d9ff;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        /* Adjust to place icon within easy reach */
+        right: 20px;
+        z-index: 1001;
+    }
 }
 
 /* Adjust padding for smoother layout */
@@ -159,7 +178,7 @@ nav .logo img {
 
 .hero-content p {
     font-size: 2rem;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .btn {
@@ -180,19 +199,21 @@ nav .logo img {
 /* Scroll Indicator Styling */
 .scroll-indicator {
     position: absolute;
-    bottom: 100px;
-    /* Adjust based on your layout */
+    bottom: 20px;
+    /* Position it a bit higher to avoid overlap */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 900;
+    /* Lower z-index so it stays below the socials popup */
 }
 
-.mouse {
-    width: 35px;
+.scroll-indicator .mouse {
+    width: 32px;
     height: 55px;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     border-radius: 25px;
     position: relative;
     display: flex;
@@ -200,7 +221,7 @@ nav .logo img {
     align-items: flex-start;
 }
 
-.scroll {
+.scroll-indicator .scroll {
     width: 4px;
     height: 10px;
     background-color: #fff;
@@ -208,6 +229,23 @@ nav .logo img {
     position: absolute;
     top: 10px;
     animation: scrollAnimation 1.5s infinite;
+}
+
+/* Responsive Styling for Smaller Viewports */
+@media (max-width: 768px) {
+    .socials-popup-container {
+        margin-top: 10px;
+        /* Adjust to keep some space */
+        z-index: 1000;
+        /* Ensure it’s always on top */
+    }
+
+    .scroll-indicator {
+        bottom: 15px;
+        /* Adjust positioning if needed to avoid overlap */
+        z-index: 900;
+        /* Ensure it stays below the socials popup */
+    }
 }
 
 /* Animation for the scroll effect */
@@ -232,6 +270,9 @@ nav .logo img {
     position: relative;
     display: inline-block;
     text-align: center;
+    margin-top: 10px;
+    z-index: 1000;
+    /* High z-index to ensure it stays above the scroll indicator */
 }
 
 /* Trigger Text Styling */
@@ -240,7 +281,7 @@ nav .logo img {
     font-weight: bold;
     color: #6610f2;
     cursor: pointer;
-    transition: color 2.0s ease;
+    transition: color 0.3s ease;
 }
 
 .socials-trigger:hover {
@@ -299,53 +340,6 @@ nav .logo img {
 .socials-popup-container.active .socials-popup {
     display: block;
 }
-/* About Section */
-#about {
-    padding: 100px 0;
-    background: #241f1f;
-}
-
-#about h2 {
-    text-align: center;
-    margin-bottom: 80px;
-    font-size: 2.5rem;
-    position: relative;
-}
-
-#about h2::after {
-    content: '';
-    width: 100px;
-    height: 4px;
-    background: #007bff;
-    position: absolute;
-    left: 50%;
-    bottom: -10px;
-    transform: translateX(-50%);
-}
-
-.about-content {
-    margin: 0 20px;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-.about-content img {
-    width: 400px;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-}
-
 /* Expertise Section */
 #expertise {
     padding: 100px 20px;
