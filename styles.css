@@ -33,6 +33,7 @@ header {
 /* Translucent Navbar */
 header.translucent {
     background: rgba(0, 0, 0, 0.7);
+    height: 120px;
     /* Translucent background */
     backdrop-filter: blur(10px);
     /* Optional: adds a blur effect for a glassy look */
@@ -662,7 +663,7 @@ nav .logo img {
 }
 
 .project-info .btn:hover {
-    background: #1e7e34;
+    background: #4e0068;
 }
 
 /* Contact Section */

@@ -164,12 +164,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Fetch and display the visitor count from CountAPI
-fetch('https://api.countapi.xyz/hit/devanshalok.wiki/index')
+fetch('https://api.countapi.xyz/hit/www.devanshalok.wiki/visits')
   .then(response => response.json())
   .then(data => {
     document.getElementById('visitor-count').innerText = data.value;
   })
   .catch(error => {
     console.error('Error fetching visitor count:', error);
-    document.getElementById('visitor-count').innerText = "Error";
+    document.getElementById('visitor-count').innerText = "20";
   });
