@@ -62,7 +62,7 @@ Contributions are welcome! For significant changes, please open an issue first t
 
 ## Authors
 
-- **Devansh Alok** - Initial work - [Devansh Alok](https://github.com/devanshalok)
+- **Devansh Alok** - [Devansh Alok](https://github.com/devanshalok)
 
 ## License
 
